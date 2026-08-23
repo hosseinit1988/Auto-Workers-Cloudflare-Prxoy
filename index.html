@@ -26,10 +26,9 @@
   --transition:all .25s cubic-bezier(.4,0,.2,1);
 }
 
-/* ── Cross-Platform & Windows Scrollbar Fixes ── */
 html, body {
   width: 100%;
-  overflow-x: hidden; /* Prevents Windows horizontal scrollbar bugs */
+  overflow-x: hidden;
 }
 * {
   scrollbar-width: thin;
@@ -50,7 +49,6 @@ body {
 body.ltr { direction: ltr; }
 body.rtl { direction: rtl; }
 
-/* ── Windows Grid Bug Fix: Enforce min-width: 0 on containers ── */
 .container, .card, .config-grid > *, .feature-grid > *, .result-box, .result-value {
   min-width: 0;
 }
@@ -61,7 +59,6 @@ body.rtl { direction: rtl; }
   margin: 0 auto;
 }
 
-/* ── Top Nav ── */
 .top-nav {
   display: flex;
   justify-content: space-between;
@@ -79,12 +76,10 @@ body.rtl { direction: rtl; }
 }
 .nav-btn:hover, .nav-btn:active { background: var(--cyan-bg); border-color: var(--cyan); color: var(--cyan); }
 
-/* ── Header ── */
 .header { text-align: center; margin-bottom: 24px; }
 .logo { font-size: 2.2rem; font-weight: 900; letter-spacing: 4px; color: var(--cyan); margin-bottom: 4px; }
 .logo-sub { color: var(--text2); font-size: .85rem; font-weight: 400; }
 
-/* ── Steps Indicator ── */
 .steps { display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; }
 .step-dot {
   width: 10px; height: 10px; border-radius: 50%; background: var(--bg4);
@@ -93,7 +88,6 @@ body.rtl { direction: rtl; }
 .step-dot.active { background: var(--cyan); border-color: var(--cyan); box-shadow: 0 0 12px rgba(229,57,53,.5); }
 .step-dot.done { background: var(--green); border-color: var(--green); }
 
-/* ── Card ── */
 .card {
   background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius2);
   padding: 28px; box-shadow: var(--shadow); transition: var(--transition);
@@ -102,7 +96,6 @@ body.rtl { direction: rtl; }
 .card-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; color: var(--cyan); }
 .card-subtitle { color: var(--text2); font-size: .88rem; margin-bottom: 20px; }
 
-/* ── Form Controls ── */
 .form-group { margin-bottom: 18px; }
 .form-label { display: block; font-size: .85rem; font-weight: 600; color: var(--text2); margin-bottom: 6px; }
 .form-input {
@@ -116,7 +109,6 @@ body.rtl { direction: rtl; }
 textarea.form-input { min-height: 100px; resize: vertical; }
 .form-hint { font-size: .78rem; color: var(--text3); margin-top: 5px; line-height: 1.4; }
 
-/* ── Buttons ── */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   padding: 12px 24px; border-radius: var(--radius); font-size: .92rem;
@@ -133,7 +125,6 @@ textarea.form-input { min-height: 100px; resize: vertical; }
 .btn-group { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
 .btn-sm { padding: 8px 16px; font-size: .82rem; min-height: 36px; }
 
-/* ── Alerts ── */
 .alert {
   padding: 12px 16px; border-radius: var(--radius); font-size: .85rem;
   margin-bottom: 16px; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
@@ -145,7 +136,6 @@ textarea.form-input { min-height: 100px; resize: vertical; }
 .alert-warn { background: var(--yellow-bg); border: 1px solid rgba(255,170,0,.2); color: var(--yellow); }
 .alert-icon { font-size: 1.1rem; flex-shrink: 0; }
 
-/* ── Progress & Status ── */
 .progress-list { list-style: none; margin: 8px 0; }
 .progress-item {
   display: flex; align-items: center; gap: 12px; padding: 12px 14px;
@@ -167,7 +157,6 @@ textarea.form-input { min-height: 100px; resize: vertical; }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ── Result Cards ── */
 .result-box {
   background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 14px; margin-bottom: 12px;
@@ -186,7 +175,6 @@ textarea.form-input { min-height: 100px; resize: vertical; }
 .copy-btn:hover { color: var(--cyan); border-color: var(--cyan); }
 .copy-btn.copied { color: var(--green); border-color: var(--green); }
 
-/* ── Feature Grids & Lists ── */
 .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0; }
 .feature-item {
   display: flex; align-items: center; gap: 10px; padding: 12px;
@@ -233,9 +221,6 @@ footer {
   box-shadow: var(--shadow);
 }
 
-/* ══════════════════════════════════════════════════════════
-   MOBILE & TABLET BREAKPOINTS
-   ══════════════════════════════════════════════════════════ */
 @media(max-width: 640px) {
   .container { padding: 12px 12px 36px; }
   .card { padding: 20px 16px; border-radius: 14px; }
@@ -266,29 +251,22 @@ footer {
 
 <div class="container">
 
-  <!-- ── Top Navigation Bar (Constrained to 720px Container) ── -->
   <div class="top-nav">
     <button class="nav-btn" onclick="toggleLang()">🌐 EN / فا</button>
-
     <a href="https://github.com/hosseinit1988/Auto-Workers-Cloudflare-Prxoy" target="_blank" rel="noopener" class="nav-btn">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
       <span data-t="githubRepo"></span>
     </a>
   </div>
 
-  <!-- ── Header Logo ── -->
   <div class="header">
     <div class="logo">HIT</div>
     <div class="logo-sub" data-t="logoSub"></div>
   </div>
 
-  <!-- ── Step Dots Indicator ── -->
   <div class="steps" id="stepsIndicator"></div>
-
-  <!-- ── Dynamic Step Content ── -->
   <div id="stepContent"></div>
 
-  <!-- ── Footer Card (Aligned with Main UI Card) ── -->
   <footer>
     <div style="display:flex;justify-content:center;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap">
       <a href="https://github.com/hosseinit1988/Auto-Workers-Cloudflare-Prxoy" target="_blank" rel="noopener" class="nav-btn" style="padding:4px 12px;font-size:.8rem">
@@ -302,7 +280,7 @@ footer {
     </p>
   </footer>
 
-</div> <!-- /.container -->
+</div>
 
 </body>
 
@@ -320,7 +298,6 @@ const T = {
   madeWith: { fa: 'ساخته شده با', en: 'Made with' },
   by: { fa: 'توسط', en: 'by' },
 
-  // Mode Selection
   updateWorkerBtn: { fa: 'به‌روزرسانی کد ورکر', en: 'Update Worker Code' },
   updateTitle: { fa: 'به‌روزرسانی نسخه هیت', en: 'Update Hit Version' },
   updateSub: { fa: 'جایگزینی کد ورکر فعلی با آخرین نسخه', en: 'Replace current Worker code with the latest version' },
@@ -331,12 +308,10 @@ const T = {
   lastUpdatedLabel: { fa: 'آخرین به‌روزرسانی:', en: 'Last updated:' },
   noSavedPanels: { fa: 'هیچ پنل ذخیره‌شده‌ای یافت نشد', en: 'No saved panels found' },
   
-  // Progress Steps for Update Mode
   stepFetchD1Binding: { fa: 'دریافت تنظیمات و دیتابیس ورکر فعلی', en: 'Fetching existing Worker & DB configuration' },
   updateSuccessTitle: { fa: 'به‌روزرسانی با موفقیت انجام شد!', en: 'Update Successful!' },
   updateSuccessSub: { fa: 'کد ورکر شما به آخرین نسخه به‌روزرسانی شد.', en: 'Your Worker code has been updated to the latest version.' },
 
-  // ── Step 1: Welcome ──
   welcomeTitle: { fa: 'به نصب‌کننده هیت خوش آمدید', en: 'Welcome to Hit Installer' },
   welcomeSub: {
     fa: 'این ابزار به‌صورت خودکار گیت‌وی هیت را روی Cloudflare Workers مستقر می‌کند',
@@ -361,9 +336,6 @@ const T = {
   createTokenLink: { fa: 'ساخت API Token در Cloudflare', en: 'Create API Token at Cloudflare' },
   letsStart: { fa: 'شروع کنیم', en: "Let's Start" },
 
-
-
-  // ── Step 2: Credentials ──
   credTitle: { fa: 'اعتبارنامه Cloudflare', en: 'Cloudflare Credentials' },
   credSub: {
     fa: 'API Token و شناسه حساب خود را وارد کنید',
@@ -393,7 +365,6 @@ const T = {
   back: { fa: 'بازگشت', en: 'Back' },
   validate: { fa: 'اعتبارسنجی', en: 'Validate' },
 
-  // ── Step 3: Configuration ──
   configTitle: { fa: 'پیکربندی استقرار', en: 'Deployment Configuration' },
   configSub: { fa: 'تنظیمات Worker و پایگاه داده را مشخص کنید', en: 'Specify Worker and database settings' },
   labelWorker: { fa: 'نام Worker', en: 'Worker Name' },
@@ -420,7 +391,6 @@ const T = {
   hintApiRoute: { fa: 'مسیر URL پنل مدیریت (پیش‌فرض: sync)', en: 'Dashboard URL path (default: sync)' },
   deploy: { fa: 'استقرار', en: 'Deploy' },
 
-  // ── Step 4: Deployment ──
   deployTitle: { fa: 'در حال استقرار...', en: 'Deploying...' },
   deploySub: { fa: 'لطفاً صبر کنید تا فرآیند تکمیل شود', en: 'Please wait while the process completes' },
   stepFetch: { fa: 'دریافت آخرین نسخه کد Worker', en: 'Fetching latest Worker code' },
@@ -445,7 +415,6 @@ const T = {
   enableUrlDetail: { fa: 'ایجاد نسخه و استقرار صریح با فعال‌سازی workers.dev', en: 'Creating version and explicit deployment with workers.dev enabled' },
   verifyDetail: { fa: 'بررسی دسترسی به Worker مستقر شده', en: 'Checking accessibility of deployed Worker' },
 
-  // ── Step 5: Success ──
   successTitle: { fa: 'استقرار موفق!', en: 'Deployment Successful!' },
   successSub: {
     fa: 'هیت با موفقیت روی Cloudflare Workers مستقر شد',
@@ -479,7 +448,6 @@ const T = {
     ]
   },
 
-  // ── Errors ──
   errNetwork: { fa: 'خطای شبکه — اتصال اینترنت خود را بررسی کنید', en: 'Network error — check your internet connection' },
   errCors: { fa: 'خطای CORS — ممکن است مرورگر شما درخواست را مسدود کرده باشد', en: 'CORS error — your browser may have blocked the request' },
   errUnknown: { fa: 'خطای ناشناخته', en: 'Unknown error' },
@@ -487,7 +455,6 @@ const T = {
   errCfApi: { fa: 'خطای Cloudflare API', en: 'Cloudflare API error' },
   errCfCors: { fa: 'دسترسی مستقیم به Cloudflare API از مرورگر مسدود شده. از VPN استفاده کنید یا مرورگر دیگری امتحان کنید.', en: 'Direct browser access to Cloudflare API is blocked. Try a VPN or different browser.' },
 
-  // ── Connectivity / Proxy ──
   connTitle: { fa: 'بررسی اتصال', en: 'Connectivity Check' },
   connSub: { fa: 'در حال آزمایش اتصال مستقیم به Cloudflare API...', en: 'Testing direct connection to Cloudflare API...' },
   connTesting: { fa: 'در حال آزمایش اتصال...', en: 'Testing connection...' },
@@ -529,8 +496,17 @@ let lang = 'fa';
 let currentStep = 0;
 const totalSteps = 6;
 
-// Default proxy URL — hosted by the Hit project. Override in localStorage if self-hosting.
+// ============================================================
+// ⚠️ IMPORTANT: Change this URL to your own proxy Worker URL
+// ============================================================
+// DEFAULT PROXY URL - You can use the public proxy or deploy your own
+// To deploy your own proxy, use the installer-proxy.js file
 const DEFAULT_PROXY_URL = 'https://hit-installer-proxy.iyebekhe.workers.dev';
+
+// ============================================================
+// ALTERNATIVE PUBLIC PROXY (if default doesn't work, try this)
+// ============================================================
+const FALLBACK_PROXY_URL = 'https://nahan-installer-proxy.iyebekhe.workers.dev';
 
 const state = {
   isUpdate: false,
@@ -687,7 +663,6 @@ async function testDirectApi() {
 }
 
 async function fetchAccounts(token) {
-  // Fetch list of accounts the token has access to
   const prevToken = state.apiToken;
   state.apiToken = token;
   const r = await cfFetch('/accounts');
@@ -812,18 +787,11 @@ async function findExistingD1() {
 }
 
 async function deployWorker() {
-  // Deploy using stable multipart PUT API.
-  // This creates the Worker AND the service resource in one call,
-  // which is required for the services API to enable workers.dev.
-  //
-  // Flow: PUT /workers/scripts/{name} → enable subdomain → verify
-
   console.log('[Deploy] === Starting deployment (stable PUT + subdomain enable) ===');
   console.log('[Deploy] Worker name:', state.workerName);
   console.log('[Deploy] DB ID:', state.dbId);
   console.log('[Deploy] Worker code length:', state.workerCode?.length, 'bytes');
 
-  // Step 1: Upload code via stable multipart PUT
   const uploadResult = await deployWorkerStable();
   if (!uploadResult.ok) {
     console.error('[Deploy] Stable upload failed:', uploadResult.msg);
@@ -831,7 +799,6 @@ async function deployWorker() {
   }
   console.log('[Deploy] ✓ Stable upload succeeded');
 
-  // Step 2: Create explicit deployment to make the worker live
   console.log('[Deploy] Creating deployment...');
   const deployPath = `/accounts/${state.accountId}/workers/scripts/${encodeURIComponent(state.workerName)}/deployments`;
   const deployBody = {
@@ -850,7 +817,6 @@ async function deployWorker() {
     console.log('[Deploy] ✓ Explicit deployment created');
   }
 
-  // Step 3: Enable workers.dev route via services API
   console.log('[Deploy] Enabling workers.dev route...');
   const enableRes = await cfFetch(
     `/accounts/${state.accountId}/workers/services/${encodeURIComponent(state.workerName)}/environments/production/subdomain`,
@@ -862,7 +828,6 @@ async function deployWorker() {
     return { ok: true, via: 'stable+deploy+services' };
   }
 
-  // Subdomain enablement failed — log but don't fail.
   console.warn('[Deploy] Enable subdomain errors:', JSON.stringify(enableRes.errors));
   console.warn('[Deploy] Enable subdomain messages:', JSON.stringify(enableRes.messages));
   console.log('[Deploy] Proceeding — subdomain may already be enabled');
@@ -870,16 +835,12 @@ async function deployWorker() {
 }
 
 async function deployWorkerStable() {
-  // Stable multipart PUT API — creates Worker, uploads code, and deploys in one request.
-
   console.log('[Stable] === Multipart PUT upload ===');
 
   const MODULE_FILENAME = 'worker.js';
 
-  // Inject config into worker code
   let code = state.workerCode;
 
-  // Inject custom password
   if (state.password && state.password !== 'admin') {
     code = code.replace(/masterKey\s*[=:]\s*['"]admin['"]/g, `masterKey: '${state.password}'`);
     code = code.replace(/MASTER_KEY\s*=\s*['"]admin['"]/g, `MASTER_KEY = '${state.password}'`);
@@ -888,7 +849,6 @@ async function deployWorkerStable() {
     console.log('[Stable] Injected custom password');
   }
 
-  // Inject worker name, account ID, and API token into SYSTEM_DEFAULTS
   if (state.workerName) {
     code = code.replace(/cfWorkerName\s*:\s*['"][^'"]*['"]/g, `cfWorkerName: "${state.workerName}"`);
   }
@@ -898,15 +858,12 @@ async function deployWorkerStable() {
   if (state.apiToken) {
     code = code.replace(/cfApiToken\s*:\s*['"][^'"]*['"]/g, `cfApiToken: "${state.apiToken}"`);
   }
-  // Inject API route
   if (state.apiRoute && state.apiRoute !== 'sync') {
     code = code.replace(/apiRoute\s*:\s*['"][^'"]*['"]/g, `apiRoute: "${state.apiRoute}"`);
   }
-  // Inject Telegram bot token
   if (state.tgToken) {
     code = code.replace(/tgToken\s*:\s*['"][^'"]*['"]/g, `tgToken: "${state.tgToken}"`);
   }
-  // Inject Telegram admin ID
   if (state.tgAdminId) {
     code = code.replace(/tgAdminId\s*:\s*['"][^'"]*['"]/g, `tgAdminId: "${state.tgAdminId}"`);
   }
@@ -979,15 +936,11 @@ async function fetchExistingWorkerBindings() {
     }
   }
   
-  // If no binding found in settings, attempt to search account D1 DBs as fallback
   console.warn('[Update] No D1 binding found in worker settings. Searching account D1 databases...');
   return await findExistingD1();
 }
 
 async function enableWorkersDevUrl() {
-  // Construct the workers.dev URL from the account's subdomain.
-  // Subdomain enablement is done in deployWorker() via the services API.
-
   console.log('[EnableUrl] === Constructing workers.dev URL ===');
 
   const subdomainRes = await cfFetch(`/accounts/${state.accountId}/workers/subdomain`);
@@ -1013,10 +966,9 @@ async function verifyDeployment() {
   }
 
   try {
-    // Method 1: Try fetching the URL directly (may fail due to CORS but connection still works)
     console.log('[Verify] Testing URL:', testUrl);
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
     
     try {
       const testRes = await fetch(testUrl, { 
@@ -1025,7 +977,6 @@ async function verifyDeployment() {
         signal: controller.signal 
       });
       clearTimeout(timeoutId);
-      // With no-cors, status is 0 (opaque) — any response means the server is reachable
       console.log('[Verify] URL reachable (status:', testRes.status, ', type:', testRes.type, ')');
       return { ok: true };
     } catch (e) {
@@ -1033,7 +984,6 @@ async function verifyDeployment() {
       console.warn('[Verify] Direct fetch failed:', e.message);
     }
 
-    // Method 2: Try to ping the worker via the Cloudflare API
     try {
       const settingsRes = await cfFetch(`/accounts/${state.accountId}/workers/scripts/${encodeURIComponent(state.workerName)}/settings`);
       if (settingsRes.success && settingsRes.result) {
@@ -1044,12 +994,10 @@ async function verifyDeployment() {
       console.warn('[Verify] API check failed:', e.message);
     }
 
-    // Method 3: Check if the subdomain is active
     try {
       const subdomainRes = await cfFetch(`/accounts/${state.accountId}/workers/subdomain`);
       if (subdomainRes.success && subdomainRes.result?.subdomain) {
         console.log('[Verify] Subdomain exists:', subdomainRes.result.subdomain);
-        // Worker exists and subdomain exists — likely just needs more propagation time
         return { ok: true };
       }
     } catch (e) {
@@ -1108,7 +1056,7 @@ function deleteSavedPanel(id, event) {
   let panels = getSavedPanels();
   panels = panels.filter(p => p.id !== id && p.workerName !== id);
   localStorage.setItem('hit_saved_panels', JSON.stringify(panels));
-  renderStep(); // Refresh Welcome UI
+  renderStep();
 }
 
 function quickUpdatePanel(id) {
@@ -1116,7 +1064,6 @@ function quickUpdatePanel(id) {
   const target = panels.find(p => p.id === id || p.workerName === id);
   if (!target) return;
 
-  // Load saved credentials & settings into state
   state.isUpdate = true;
   state.workerName = target.workerName;
   state.accountId = target.accountId;
@@ -1126,7 +1073,6 @@ function quickUpdatePanel(id) {
   state.apiRoute = target.apiRoute || 'sync';
   state.deployUrl = target.deployUrl || '';
 
-  // Jump straight to connectivity check & credential validation
   goStep(1);
 }
 
@@ -1159,7 +1105,6 @@ function renderStep() {
   applyTranslations();
 }
 
-// ── Welcome ──
 function renderWelcome() {
   const savedPanels = getSavedPanels();
 
@@ -1232,13 +1177,11 @@ ${savedPanels.map(p => {
 </div>`;
 }
 
-// Add this helper function below renderWelcome()
 function startFlow(isUpdateMode) {
   state.isUpdate = isUpdateMode;
   goStep(1);
 }
 
-// ── Connectivity Test / Proxy Setup ──
 const PROXY_CODE = `// Hit Installer Proxy Worker — Deploy on your Cloudflare account.
 const CORS = {
   'Access-Control-Allow-Origin': '*',
@@ -1293,7 +1236,6 @@ function renderConnTest() {
     <span data-t="connTesting"></span>
   </div>
 
-  <!-- Proxy selection buttons (shown when direct access fails) -->
   <div id="proxyButtons" style="display:none;margin:20px 0">
     <div style="text-align:center;margin-bottom:16px">
       <div style="font-size:.9rem;color:var(--text2);margin-bottom:12px">
@@ -1303,6 +1245,9 @@ function renderConnTest() {
         <button class="btn btn-primary" onclick="connectDefaultProxy()" style="min-width:180px">
           ⚡ <span>${lang === 'fa' ? 'پروکسی پیش‌فرض' : 'Default Proxy'}</span>
         </button>
+        <button class="btn btn-secondary" onclick="connectFallbackProxy()" style="min-width:180px">
+          🔄 <span>${lang === 'fa' ? 'پروکسی جایگزین' : 'Fallback Proxy'}</span>
+        </button>
         <button class="btn btn-secondary" onclick="showCustomProxyForm()" style="min-width:180px">
           🔧 <span>${lang === 'fa' ? 'پروکسی شخصی' : 'Custom Proxy'}</span>
         </button>
@@ -1310,7 +1255,6 @@ function renderConnTest() {
     </div>
   </div>
 
-  <!-- Custom proxy form (hidden by default) -->
   <div id="customProxyForm" style="display:none;margin-top:16px">
     <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:16px">
       <div style="font-weight:600;margin-bottom:8px;color:var(--cyan)" data-t="customProxyTitle"></div>
@@ -1337,10 +1281,6 @@ function renderConnTest() {
   </div>
 </div>`;
 }
-
-// ══════════════════════════════════════════════════════════
-//  CUSTOM PROXY
-// ══════════════════════════════════════════════════════════
 
 function showCustomProxyForm() {
   const btns = document.getElementById('proxyButtons');
@@ -1405,14 +1345,45 @@ async function connectDefaultProxy() {
     const j = await r.json();
     if (j.ok) {
       state.proxyUrl = DEFAULT_PROXY_URL;
+      localStorage.setItem('hit_proxy_url', DEFAULT_PROXY_URL);
       statusEl.className = 'conn-status conn-ok';
       statusEl.innerHTML = `<span>✓</span><span>${t('proxyConnected')}</span>`;
       setTimeout(() => goStep(2), 1000);
       return;
     }
-  } catch (e) { /* failed */ }
+  } catch (e) {
+    console.warn('[Proxy] Default proxy failed:', e.message);
+  }
 
-  // Default proxy also failed — show manual setup
+  // Default proxy failed — try fallback
+  await connectFallbackProxy();
+}
+
+async function connectFallbackProxy() {
+  const statusEl = document.getElementById('connStatus');
+  const resultEl = document.getElementById('connResult');
+  const proxyBtns = document.getElementById('proxyButtons');
+
+  statusEl.className = 'conn-status conn-testing';
+  statusEl.innerHTML = `<div class="spinner"></div><span>${lang === 'fa' ? 'در حال اتصال به پروکسی جایگزین...' : 'Connecting to fallback proxy...'}</span>`;
+  if (proxyBtns) proxyBtns.style.display = 'none';
+
+  try {
+    const r = await fetch(`${FALLBACK_PROXY_URL}/health`);
+    const j = await r.json();
+    if (j.ok) {
+      state.proxyUrl = FALLBACK_PROXY_URL;
+      localStorage.setItem('hit_proxy_url', FALLBACK_PROXY_URL);
+      statusEl.className = 'conn-status conn-ok';
+      statusEl.innerHTML = `<span>✓</span><span>${t('proxyConnected')}</span>`;
+      setTimeout(() => goStep(2), 1000);
+      return;
+    }
+  } catch (e) {
+    console.warn('[Proxy] Fallback proxy failed:', e.message);
+  }
+
+  // Both proxies failed — show manual setup
   statusEl.className = 'conn-status conn-fail';
   statusEl.innerHTML = `<span>✗</span><span>${t('connFail')}</span>`;
   resultEl.innerHTML = renderProxySetup();
@@ -1422,7 +1393,6 @@ async function runConnectivityTest() {
   const statusEl = document.getElementById('connStatus');
   const resultEl = document.getElementById('connResult');
 
-  // If we have a saved custom proxy, test it first
   if (state.proxyUrl) {
     try {
       const r = await fetch(`${state.proxyUrl}/health`);
@@ -1440,7 +1410,6 @@ async function runConnectivityTest() {
     }
   }
 
-  // Test direct API access
   const directOk = await testDirectApi();
   state.directApiOk = directOk;
 
@@ -1451,12 +1420,10 @@ async function runConnectivityTest() {
     return;
   }
 
-  // Direct failed — show proxy selection buttons
   statusEl.className = 'conn-status conn-fail';
   statusEl.innerHTML = `<span>✗</span><span>${lang === 'fa' ? 'اتصال مستقیم ممکن نیست' : 'Direct access not possible'}</span>`;
   resultEl.innerHTML = '';
 
-  // Show proxy selection buttons
   const proxyBtns = document.getElementById('proxyButtons');
   if (proxyBtns) proxyBtns.style.display = 'block';
 }
@@ -1540,7 +1507,6 @@ async function testProxyConnection() {
 
 // ── Credentials ──
 function renderCredentials() {
-  // Pre-filled token creation URL with required permissions.
   const tokenPermissions = [
     { key: 'workers_scripts', type: 'edit' },
     { key: 'd1', type: 'edit' },
@@ -1562,7 +1528,6 @@ function renderCredentials() {
   <div class="form-group">
     <label class="form-label" data-t="labelToken"></label>
 
-    <!-- Step-by-step guide -->
     <div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px">
       <div style="font-weight:600;color:var(--cyan);margin-bottom:10px;font-size:.9rem">📋 ${lang === 'fa' ? 'راهنمای ساخت API Token:' : 'How to create an API Token:'}</div>
       <ol style="padding-${lang === 'fa' ? 'right' : 'left'}:20px;margin:0;color:var(--text2);font-size:.85rem;line-height:2">
@@ -1584,7 +1549,6 @@ function renderCredentials() {
     <div class="form-hint" data-t="hintToken"></div>
   </div>
 
-  <!-- Account ID: auto-filled after token validation -->
   <div class="form-group" id="accountGroup" style="display:none">
     <label class="form-label" data-t="labelAccount"></label>
     <select class="form-input" id="inpAccount" style="direction:ltr;text-align:left;cursor:pointer" onchange="onAccountSelect()">
@@ -1593,7 +1557,6 @@ function renderCredentials() {
     <div class="form-hint" data-t="hintAccount"></div>
   </div>
 
-  <!-- Fallback: manual Account ID input -->
   <div class="form-group" id="accountManual" style="display:none">
     <label class="form-label" data-t="labelAccount"></label>
     <input type="text" class="form-input" id="inpAccountManual" value="${esc(state.accountId)}"
@@ -1621,13 +1584,11 @@ async function handleValidate() {
     return;
   }
 
-  // Check if we already have an account ID (from manual input or previous selection)
   const manualEl = document.getElementById('inpAccountManual');
   if (manualEl && manualEl.value.trim()) {
     state.accountId = manualEl.value.trim();
   }
 
-  // If we already have an account ID, just validate
   if (state.accountId) {
     btnEl.disabled = true;
     btnEl.innerHTML = `<div class="spinner"></div> ${t('validating')}`;
@@ -1646,7 +1607,6 @@ async function handleValidate() {
     return;
   }
 
-  // No account ID yet — fetch accounts from API
   btnEl.disabled = true;
   btnEl.innerHTML = `<div class="spinner"></div> ${lang === 'fa' ? 'در حال دریافت اکانت‌ها...' : 'Fetching accounts...'}`;
   alertEl.innerHTML = '';
@@ -1668,7 +1628,6 @@ async function handleValidate() {
     return;
   }
 
-  // If only one account, auto-select
   if (accounts.length === 1) {
     state.accountId = accounts[0].id;
     state.accountName = accounts[0].name || '';
@@ -1679,7 +1638,6 @@ async function handleValidate() {
     return;
   }
 
-  // Multiple accounts — show dropdown
   const acctGroup = document.getElementById('accountGroup');
   const acctSelect = document.getElementById('inpAccount');
   acctGroup.style.display = 'block';
@@ -1706,7 +1664,6 @@ function onAccountSelect() {
   }
 }
 
-// ── Configuration ──
 function renderConfig() {
   const isUpdate = state.isUpdate;
   
@@ -1784,7 +1741,6 @@ function handleConfigNext() {
 
   state.workerName = workerName;
 
-  // Read fields safely if rendered
   const dbInput = document.getElementById('inpDB');
   if (dbInput) state.dbName = dbInput.value.trim() || 'iot_db';
 
@@ -1803,7 +1759,6 @@ function handleConfigNext() {
   goStep(4);
 }
 
-// ── Deployment ──
 function renderDeploy() {
   return `
 <div class="card step-panel">
@@ -1868,7 +1823,6 @@ async function runDeployment() {
   const alertEl = () => document.getElementById('deployAlert');
   const showBtns = () => { document.getElementById('deployButtons').style.display = 'flex'; };
 
-  // Step 1: Fetch code
   setProgress('prog-fetch', 'active');
   const fetchResult = await fetchWorkerCode();
   if (!fetchResult.ok) {
@@ -1880,11 +1834,9 @@ async function runDeployment() {
   const verLabel = state.workerVersion ? `v${state.workerVersion}` : fetchResult.source;
   setProgress('prog-fetch', 'done', verLabel);
 
-  // Step 2: D1 Database handling
   setProgress('prog-d1', 'active');
   
   if (state.isUpdate) {
-    // UPDATE MODE: Fetch existing D1 binding from Worker configuration
     setProgress('prog-d1', 'active', t('stepFetchD1Binding'));
     const d1Result = await fetchExistingWorkerBindings();
     if (!d1Result.ok) {
@@ -1895,7 +1847,6 @@ async function runDeployment() {
     }
     setProgress('prog-d1', 'done', `Reusing DB ID: ${state.dbId}`);
   } else {
-    // FRESH INSTALL MODE: Create/Find D1 Database
     const d1Result = await createD1Database();
     if (!d1Result.ok) {
       setProgress('prog-d1', 'error');
@@ -1907,7 +1858,6 @@ async function runDeployment() {
     setProgress('prog-d1', 'done', d1Msg);
   }
 
-  // Step 3: Deploy Worker
   setProgress('prog-deploy', 'active');
   const deployResult = await deployWorker();
   if (!deployResult.ok) {
@@ -1918,7 +1868,6 @@ async function runDeployment() {
   }
   setProgress('prog-deploy', 'done', deployResult.via || '');
 
-  // Enable workers.dev route and construct URL
   const urlResult = await enableWorkersDevUrl();
   if (!urlResult.ok) {
     if (urlResult.noSubdomain) {
@@ -1929,7 +1878,6 @@ async function runDeployment() {
     }
   }
 
-  // Step 4: Verification
   setProgress('prog-verify', 'active');
   const waitMs = 5000;
   await new Promise(resolve => setTimeout(resolve, waitMs));
@@ -1942,11 +1890,9 @@ async function runDeployment() {
 
   saveCurrentPanel();
 
-  // Done!
   setTimeout(() => goStep(5), 600);
 }
 
-// ── Success ──
 function renderSuccess() {
   const pass = state.password || 'admin';
   const isDefaultPass = !state.password || state.password === 'admin';
@@ -1974,7 +1920,6 @@ function renderSuccess() {
   </div>`;
   }
 
-  // Only show password card, security warning, and quick start guide during FRESH INSTALLS
   const securityWarning = (!state.isUpdate && isDefaultPass) ? `
   <div class="alert alert-warn">
     <span class="alert-icon">⚠️</span>
@@ -2026,9 +1971,6 @@ function renderSuccess() {
 </div>`;
 }
 
-// ══════════════════════════════════════════════════════════
-//  UTILITIES
-// ══════════════════════════════════════════════════════════
 function esc(s) {
   if (!s) return '';
   const d = document.createElement('div');
@@ -2074,13 +2016,9 @@ function resetAll() {
   state.workerCode = '';
   state.workerVersion = '';
   state.deployUrl = '';
-  // proxyUrl is preserved in localStorage — don't clear it
   goStep(0);
 }
 
-// ══════════════════════════════════════════════════════════
-//  INIT
-// ══════════════════════════════════════════════════════════
 renderStep();
 </script>
 </html>
