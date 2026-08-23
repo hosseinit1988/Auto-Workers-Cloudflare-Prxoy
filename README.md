@@ -39,7 +39,7 @@
 </p>
 
 ---
-<br>
+
 <div align="center">
   ![Automated Cloudflare Workers Installer Screenshot](screenshot.png)
 </div>
