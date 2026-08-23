@@ -41,7 +41,7 @@
 ---
 
 <div align="center">
-  <img src="screenshot.png" alt="Hit Installer Screenshot" width="800">
+  <img src="screenshot.png" alt="Hit Installer Screenshot" width="400">
 </div>
 ## 🧩 معرفی پروژه
 
