@@ -40,9 +40,9 @@
 
 ---
 <br>
-
-![Nahan Installer Screenshot](screenshot.png)
-
+<center>
+![Automated Cloudflare Workers Installer Screenshot](screenshot.png)
+</center>
 ## 🧩 معرفی پروژه
 
 **Auto Workers Cloudflare Proxy** یک پروژه سبک، مدرن و کاربردی بر پایه **Cloudflare Workers** است که یک رابط وب تعاملی برای نصب و مدیریت سرویس‌های Worker فراهم می‌کند.
