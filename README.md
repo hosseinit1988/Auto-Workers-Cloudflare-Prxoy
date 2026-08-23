@@ -41,7 +41,7 @@
 ---
 <br>
 
-![Nahan Installer Screenshot](Screenshot.png)
+![Nahan Installer Screenshot](screenshot.png)
 
 ## 🧩 معرفی پروژه
 
