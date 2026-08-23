@@ -41,7 +41,7 @@
 ---
 
 <div align="center">
-  ![Automated Cloudflare Workers Installer Screenshot](screenshot.png)
+  <img src="Screenshot.png" alt="Hit Installer Screenshot" width="800">
 </div>
 ## 🧩 معرفی پروژه
 
